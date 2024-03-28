@@ -9,9 +9,11 @@ import os
 os.system("cls")
 
 idade = int(input("idade: "))
-if idade >= 0 and idade <= 12:
+if 0 < idade <=12:
     print("Criança") 
-elif idade <= 18:
+elif 12 < idade <= 18:
     print("Adolescente")
-else:
+elif idade > 18:
     print("Adulto")
+else:
+    print("Valor invalido")
