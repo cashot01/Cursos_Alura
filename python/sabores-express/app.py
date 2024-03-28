@@ -1,6 +1,9 @@
 import os
 os.system("cls")
 
+restaurantes = []
+# [] - listas 
+
 def exibir_nome_programa():
     print(""" 𝕊𝕒𝕓𝕠𝕣 𝔼𝕩𝕡𝕣𝕖𝕤𝕤
 """)
@@ -21,20 +24,30 @@ def opcao_invalida():
     input("digite uma tecla para voltar no menu principal ")
     main()
 
+def cadstrar_novo_resturante():
+    os.system("cls")
+    print("Cadastro de novos restaurantes")
+    nome_restaurante = input("digite o nome do restaurante: ")
+    restaurantes.append(nome_restaurante)
+    # .append adiciona na lista
+    print(f"restaurante {nome_restaurante} foi cadastrado com sucesso")
+    input("digite uma tecla para voltar menu principal: ")
+    main()
+
 def escolher_opcao():
     try: # comando q tenta executar 
         opcao_escolhida = int(input("Escolha uma opção: "))
-        match opcao_escolhida:
-            case 1:
-                print("Cadastrando Restaurante")
-            case 2:
-                print("Listar Restaurante")
-            case 3:
-                print("Ativar Restaurante")
-            case 4:
-                finalizar_app()
-            case _:
-                opcao_invalida()
+        
+        if opcao_escolhida == 1:
+            cadstrar_novo_resturante() 
+        elif opcao_escolhida == 2:
+            print("Listar Restaurante")
+        elif opcao_escolhida == 3:
+            print("Ativar Restaurante")
+        elif opcao_escolhida ==  4:
+            finalizar_app()
+        else:
+            opcao_invalida()
     except: # "else" do try 
         opcao_invalida()
 
