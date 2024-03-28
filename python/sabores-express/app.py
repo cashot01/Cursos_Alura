@@ -16,22 +16,31 @@ def exibir_opcoes():
     print("3. Ativar Restaurante")
     print("4. Sair\n")
 
+def opcao_invalida():
+    print("opção invalida")
+    input("digite uma tecla para voltar no menu principal ")
+    main()
+
 def escolher_opcao():
-    opcao_escolhida = int(input("Escolha uma opção: "))
-    match opcao_escolhida:
-        case 1:
-            print("Cadastrando Restaurante")
-        case 2:
-            print("Listar Restaurante")
-        case 3:
-            print("Ativar Restaurante")
-        case 4:
-            finalizar_app()
-        case _:
-            print("opção invalida")
+    try: # comando q tenta executar 
+        opcao_escolhida = int(input("Escolha uma opção: "))
+        match opcao_escolhida:
+            case 1:
+                print("Cadastrando Restaurante")
+            case 2:
+                print("Listar Restaurante")
+            case 3:
+                print("Ativar Restaurante")
+            case 4:
+                finalizar_app()
+            case _:
+                opcao_invalida()
+    except: # "else" do try 
+        opcao_invalida()
 
 
 def main():
+    os.system("cls")
     exibir_nome_programa()
     exibir_opcoes()
     escolher_opcao()
