@@ -18,15 +18,17 @@ def exibir_opcoes():
 
 def escolher_opcao():
     opcao_escolhida = int(input("Escolha uma opção: "))
-
-    if opcao_escolhida == 1:
-        print("Cadastrando Restaurante")
-    elif opcao_escolhida == 2:
-        print("Listar Restaurante")
-    elif opcao_escolhida == 3:
-        print("Ativar Restaurante")
-    else:
-        finalizar_app()
+    match opcao_escolhida:
+        case 1:
+            print("Cadastrando Restaurante")
+        case 2:
+            print("Listar Restaurante")
+        case 3:
+            print("Ativar Restaurante")
+        case 4:
+            finalizar_app()
+        case _:
+            print("opção invalida")
 
 
 def main():
