@@ -60,7 +60,10 @@ def listar_restaurantes():
     for restaurante in restaurantes:
         nome_restaurante = restaurante["nome"]
         categoria = restaurante["categoria"]
-        ativo = "ativado" if restaurante["ativo"] else "desativado"
+        ativo = "ativado" if restaurante["ativo"] else "desativado" # Ternario
+        """
+        O operador ternário em Python é uma forma concisa de escrever uma expressão condicional. Ele permite que você avalie uma condição e retorne um valor com base nessa condição, tudo em uma única linha de código.
+        """
         print(f"- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo} ")
         # ljust() -> define o mesmo tamanho para todos 
 
