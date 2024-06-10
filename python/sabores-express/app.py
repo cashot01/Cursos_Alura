@@ -18,7 +18,7 @@ def finalizar_app(): # def - função em python
 def exibir_opcoes():
     print("1. Cadastrar Restaurante")
     print("2. Listar Restaurante")
-    print("3. Ativar Restaurante")
+    print("3. Alternar estado do  Restaurante")
     print("4. Sair\n")
 
 def voltar_ao_menu_principal():
@@ -31,7 +31,11 @@ def opcao_invalida():
 
 def exibir_subtitulos(texto):
     os.system("cls")
+    linha = "*" * (len(texto) + 4)
+    print(linha)
     print(texto)
+    print(linha)
+    # linha = asterisco(*) encima e embaixo do subtitulo 
     print()
 
 def cadstrar_novo_resturante():
@@ -52,12 +56,13 @@ def cadstrar_novo_resturante():
 def listar_restaurantes():
     exibir_subtitulos("Listando os restaurantes")
 
+    print(f"{"Nome do Restaurante".ljust(22)} | {"Categoria".ljust(20)} | Status")
     for restaurante in restaurantes:
         nome_restaurante = restaurante["nome"]
         categoria = restaurante["categoria"]
-        ativo = restaurante["ativo"]
-        print(f"- {nome_restaurante} | {categoria} | {ativo} ")
-
+        ativo = "ativado" if restaurante["ativo"] else "desativado"
+        print(f"- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo} ")
+        # ljust() -> define o mesmo tamanho para todos 
 
     voltar_ao_menu_principal()
 
