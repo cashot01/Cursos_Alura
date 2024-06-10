@@ -1,7 +1,7 @@
 import os
 os.system("cls")
 
-restaurantes = []
+restaurantes = ["Pizza", "Sushi" ]
 # [] - listas 
 
 def exibir_nome_programa():
@@ -34,6 +34,17 @@ def cadstrar_novo_resturante():
     input("digite uma tecla para voltar menu principal: ")
     main()
 
+def listar_restaurantes():
+    os.system("cls")
+    print("Listando os restaurantes \n")
+
+    for restaurante in restaurantes:
+        print(f".{restaurante}")
+
+
+    input("\n digite uma tecla para voltar menu principal: ")
+    main()
+
 def escolher_opcao():
     try: # comando q tenta executar 
         opcao_escolhida = int(input("Escolha uma opção: "))
@@ -41,7 +52,7 @@ def escolher_opcao():
         if opcao_escolhida == 1:
             cadstrar_novo_resturante() 
         elif opcao_escolhida == 2:
-            print("Listar Restaurante")
+            listar_restaurantes()
         elif opcao_escolhida == 3:
             print("Ativar Restaurante")
         elif opcao_escolhida ==  4:
