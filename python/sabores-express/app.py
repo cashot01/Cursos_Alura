@@ -1,8 +1,10 @@
 import os
 os.system("cls")
 
-restaurantes = ["Pizza", "Sushi" ]
-# [] - listas 
+restaurantes = [{"nome": "Praça", "categoria": "Japonesa", "ativo":False},
+                 {"nome": "Pizza Suprema", "categoria": "Italiana", "ativo": True}, 
+                  {"nome": "Cantina", "categoria": "Italiano", "ativo":False}]
+# dicionario = [{"nome": "Praça"}]
 
 def exibir_nome_programa():
     print(""" 𝕊𝕒𝕓𝕠𝕣 𝔼𝕩𝕡𝕣𝕖𝕤𝕤
@@ -45,7 +47,10 @@ def listar_restaurantes():
     exibir_subtitulos("Listando os restaurantes")
 
     for restaurante in restaurantes:
-        print(f".{restaurante}")
+        nome_restaurante = restaurante["nome"]
+        categoria = restaurante["categoria"]
+        ativo = restaurante["ativo"]
+        print(f"- {nome_restaurante} | {categoria} | {ativo} ")
 
 
     voltar_ao_menu_principal()
