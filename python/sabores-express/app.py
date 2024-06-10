@@ -19,31 +19,36 @@ def exibir_opcoes():
     print("3. Ativar Restaurante")
     print("4. Sair\n")
 
-def opcao_invalida():
-    print("opção invalida")
-    input("digite uma tecla para voltar no menu principal ")
+def voltar_ao_menu_principal():
+    input("\n Digite uma tecla para voltar ao menu ")
     main()
 
-def cadstrar_novo_resturante():
+def opcao_invalida():
+    print("opção invalida")
+    voltar_ao_menu_principal()
+
+def exibir_subtitulos(texto):
     os.system("cls")
-    print("Cadastro de novos restaurantes")
+    print(texto)
+    print()
+
+def cadstrar_novo_resturante():
+    exibir_subtitulos("Cadastro de novos restaurantes")
+    
     nome_restaurante = input("digite o nome do restaurante: ")
     restaurantes.append(nome_restaurante)
     # .append adiciona na lista
     print(f"restaurante {nome_restaurante} foi cadastrado com sucesso")
-    input("digite uma tecla para voltar menu principal: ")
-    main()
+    voltar_ao_menu_principal()
 
 def listar_restaurantes():
-    os.system("cls")
-    print("Listando os restaurantes \n")
+    exibir_subtitulos("Listando os restaurantes")
 
     for restaurante in restaurantes:
         print(f".{restaurante}")
 
 
-    input("\n digite uma tecla para voltar menu principal: ")
-    main()
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
     try: # comando q tenta executar 
