@@ -1,3 +1,5 @@
+import os
+os.system("cls")
 # class = classe 
 class Restaurante:
     # atributos da classe
@@ -13,10 +15,12 @@ restaurante_praca.categoria = "Gourmet"
 
 
 restaurante_pizza = Restaurante()
+restaurante_pizza.nome = "Pizza Place"
+restaurante_pizza.categoria = "Fast Food"
 
 restaurantes = [restaurante_praca, restaurante_pizza]
 
-print(dir(restaurante_praca))
+print(vars(restaurante_praca))
 
 """
  objeto dir() já possui uma série de informações, como __classe__. Sempre que temos esse __ (underline, underline), significa que é um método especial que toda classe em Python possui.
