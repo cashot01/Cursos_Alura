@@ -2,30 +2,35 @@ import os
 os.system("cls")
 # class = classe 
 class Restaurante:
+    restaurantes = []
+
     # atributos da classe
     def __init__(self, nome, categoria): # construtor 
       # self tbm pode ser this (do java)
       self.nome = nome
       self.categoria = categoria
       self.ativo = False
+      Restaurante.restaurantes.append(self)
     
-    # metodo especiais
+    # metodo especiais tem __exemplo__ (underline underline antes e depois)
     def __str__(self):
       """
       O método __str__ é um método especial que pega o objeto e define que, se precisarmos mostrar esse objeto em formato de texto, mostraremos determinada informação.
       Então, em vez de mostrar a representação do endereço de memória, ele mostrará o que decidirmos.
       """
       return f"{self.nome} | {self.categoria} "
+    
+    def listar_restaurantes():
+       for restaurante in Restaurante.restaurantes:
+          print(f"{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo}")
+          
       
     
 
 restaurante_praca = Restaurante("Praça", "Gourmet")
 restaurante_pizza = Restaurante("PIzza Express", "Italiana")
 
-restaurantes = [restaurante_praca, restaurante_pizza]
-
-print(restaurante_praca)
-print(restaurante_pizza)
+Restaurante.listar_restaurantes()
 
 # print(vars(restaurante_praca))
 
