@@ -9,7 +9,8 @@ class Restaurante:
       # self tbm pode ser this (do java)
       self.nome = nome
       self.categoria = categoria
-      self.ativo = False
+      self._ativo = False
+      # _ativo atributo protegido
       Restaurante.restaurantes.append(self)
     
     # metodo especiais tem __exemplo__ (underline underline antes e depois)
@@ -21,8 +22,13 @@ class Restaurante:
       return f"{self.nome} | {self.categoria} "
     
     def listar_restaurantes():
+       print(f"{"Nome do restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Status"}")
        for restaurante in Restaurante.restaurantes:
-          print(f"{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo}")
+          print(f"{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo}")
+
+    @property # modificar aquele atributo que vai ser lido
+    def ativo(self):
+       return "⌧" if self._ativo else "☐"
           
       
     
