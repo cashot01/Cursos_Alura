@@ -7,8 +7,8 @@ class Restaurante:
     # atributos da classe
     def __init__(self, nome, categoria): # construtor 
       # self tbm pode ser this (do java)
-      self.nome = nome
-      self.categoria = categoria
+      self._nome = nome.title()
+      self._categoria = categoria.upper()
       self._ativo = False
       # _ativo atributo protegido
       Restaurante.restaurantes.append(self)
@@ -19,7 +19,7 @@ class Restaurante:
       O método __str__ é um método especial que pega o objeto e define que, se precisarmos mostrar esse objeto em formato de texto, mostraremos determinada informação.
       Então, em vez de mostrar a representação do endereço de memória, ele mostrará o que decidirmos.
       """
-      return f"{self.nome} | {self.categoria} "
+      return f"{self._nome} | {self._categoria} "
     
     def listar_restaurantes():
        print(f"{"Nome do restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Status"}")
@@ -33,8 +33,9 @@ class Restaurante:
       
     
 
-restaurante_praca = Restaurante("Praça", "Gourmet")
-restaurante_pizza = Restaurante("PIzza Express", "Italiana")
+restaurante_praca = Restaurante("praça", "Gourmet")
+restaurante_praca.ativo = True
+restaurante_pizza = Restaurante("pizza express", "Italiana")
 
 Restaurante.listar_restaurantes()
 
