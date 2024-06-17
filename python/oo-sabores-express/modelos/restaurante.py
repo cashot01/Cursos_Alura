@@ -37,11 +37,11 @@ class Restaurante:
       
     
 
-restaurante_praca = Restaurante("praça", "Gourmet")
-restaurante_praca.alternar_estado()
-restaurante_pizza = Restaurante("pizza express", "Italiana")
+# restaurante_praca = Restaurante("praça", "Gourmet")
+# restaurante_praca.alternar_estado()
+# restaurante_pizza = Restaurante("pizza express", "Italiana")
 
-Restaurante.listar_restaurantes()
+# Restaurante.listar_restaurantes()
 
 # print(vars(restaurante_praca))
 
