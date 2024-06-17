@@ -1,5 +1,6 @@
 import os
 os.system("cls")
+from modelos.avaliacao import Avaliacao
 # class = classe 
 class Restaurante:
     restaurantes = []
@@ -11,6 +12,7 @@ class Restaurante:
       self._categoria = categoria.upper()
       self._ativo = False
       # _ativo atributo protegido
+      self._avaliacao = []
       Restaurante.restaurantes.append(self)
     
     # metodo especiais tem __exemplo__ (underline underline antes e depois)
@@ -33,6 +35,10 @@ class Restaurante:
     
     def alternar_estado(self):
        self._ativo = not self._ativo
+
+    def receber_avaliacao(self, cliente, nota):
+       avaliacao = Avaliacao(cliente, nota)
+       self._avaliacao.append(avaliacao)
           
       
     
