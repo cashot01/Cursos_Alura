@@ -3,6 +3,7 @@ os.system("cls")
 from modelos.avaliacao import Avaliacao
 # class = classe 
 class Restaurante:
+          
     restaurantes = []
 
     # atributos da classe
@@ -36,9 +37,20 @@ class Restaurante:
     def alternar_estado(self):
        self._ativo = not self._ativo
 
+   
+
     def receber_avaliacao(self, cliente, nota):
        avaliacao = Avaliacao(cliente, nota)
        self._avaliacao.append(avaliacao)
+
+    @property  
+    def media_avaliacoes(self):
+       if not self._avaliacao:
+          return 0
+       soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+       quantidade_notas = len(self._avaliacao)
+       media =round( soma_das_notas / quantidade_notas, 1)
+       return media
           
       
     
