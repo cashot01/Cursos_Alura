@@ -6,3 +6,6 @@ class Prato(ItemCardapio):
         super().__init__(nome, preco)
         # super permite acessar informações de outra classe
         self.descricao = descricao
+
+    def __str__(self):
+        return self._nome
