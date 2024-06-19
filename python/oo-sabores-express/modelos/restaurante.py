@@ -14,6 +14,7 @@ class Restaurante:
       self._ativo = False
       # _ativo atributo protegido
       self._avaliacao = []
+      self.cardapio = []
       Restaurante.restaurantes.append(self)
     
     # metodo especiais tem __exemplo__ (underline underline antes e depois)
@@ -53,6 +54,13 @@ class Restaurante:
        media =round( soma_das_notas / quantidade_notas, 1)
        # round arredonda com uma casa decimal nesse caso
        return media
+    
+    def adicionar_bebida_no_cardapio(self, bebida):
+       self._cardapio.append(bebida)
+
+    def adicionar_prato_no_cardapio(self, prato):
+       self._cardapio.append(prato)
+       
           
       
     
