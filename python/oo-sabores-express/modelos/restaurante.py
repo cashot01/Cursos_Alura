@@ -14,7 +14,7 @@ class Restaurante:
       self._ativo = False
       # _ativo atributo protegido
       self._avaliacao = []
-      self.cardapio = []
+      self._cardapio = []
       Restaurante.restaurantes.append(self)
     
     # metodo especiais tem __exemplo__ (underline underline antes e depois)
