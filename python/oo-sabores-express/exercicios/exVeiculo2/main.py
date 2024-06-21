@@ -1,5 +1,11 @@
-from veiculo import Veiculo
+# from veiculo import Veiculo
 from carro import Carro
+
+"""
+4) Em um arquivo chamado main.py, importe a classe Carro.
+
+5) No arquivo main.py, instancie três objetos da classe Carro com diferentes características, como marca, modelo e cor.
+"""
 
 carro1 = Carro("BMW", "X6", "Preta")
 carro2 = Carro("Ferrari", "LaFerrari", "Veermelha")
