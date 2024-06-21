@@ -9,13 +9,14 @@ Certifique-se de que a classe Sobremesa mantenha a herança do método aplicar_d
 """
 
 class Sobremesa(ItemCardapio):
-    def __init__(self, nome, preco, tipo, tamanho):
+    def __init__(self, nome, preco, descricao, tipo, tamanho):
         super().__init__(nome, preco)
+        self.descricao = descricao
         self.tipo = tipo
         self.tamanho = tamanho
 
     def __str__(self):
-        return f"Nome: {self._nome} | Preço: {self._preco} | Tipo {self.tipo} | Tamanho {self.tamanho}"
+        return self._nome
     
     def aplicar_desconto(self):
         self._preco -= (self._preco * 0.04)

@@ -14,10 +14,10 @@ restaurante_praca.adicionar_no_cardapio(bebida_suco)
 restaurante_praca.adicionar_no_cardapio(prato_paozinho)
 
 print()
-sobremesa_pudim = Sobremesa("Pudim", 5.5, "Doce", "Medio")
-print(sobremesa_pudim)
+sobremesa_pudim = Sobremesa("Pudim", 5.5,"Pudim de leite com canela", "Doce", "Medio")
 sobremesa_pudim.aplicar_desconto()
-print(sobremesa_pudim)
+
+restaurante_praca.adicionar_no_cardapio(sobremesa_pudim)
 
 
 
